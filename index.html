@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style:none;
+        }
+        .wrapper{
+            position: relative;
+            width: 800px;
+            height: 360px;
+            margin: 150px auto;
+
+            
+            box-shadow: 1px 7px 25px #000;
+        }
+        .wrapper ul{
+            width: 100%;
+            height: 100%;  
+        }
+        .wrapper ul li{
+            position:relative;
+            float: left;
+            height: 100%;
+            box-sizing: border-box;
+            transform-style: preserve-3d;
+            transition: 0.8s;
+        }
+        .wrapper ul li div{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+        }
+        /* 上 */
+        .wrapper ul li div:nth-child(1){
+            background: url('./img/01.jpg');
+            top:-360px;
+            transform-origin: bottom;
+            transform: translateZ(180px) rotateX(90deg);
+            
+        }
+        /* 下 */
+        .wrapper ul li div:nth-child(2){
+            background: url('./img/02.jpg');
+            top:360px;
+            transform-origin: top;
+            transform: translateZ(180px) rotateX(-90deg);
+        }
+        /* 前 */
+        .wrapper ul li div:nth-child(3){
+            background: url('./img/03.jpg');
+            transform: translateZ(180px);
+        }
+        /* 后 */
+        .wrapper ul li div:nth-child(4){
+            background: url('./img/04.jpg');
+            transform: translateZ(-180px) rotateX(-180deg);
+        }
+
+
+
+
+
+        .wrapper ol{
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            bottom: 30px;
+            width:200px;
+            height: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .wrapper ol li{
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .wrapper ol li.active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 图片展示区 -->
+        <ul>
+
+        </ul>
+
+        <!-- 索引列表 -->
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
